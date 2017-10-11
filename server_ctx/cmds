@@ -1,0 +1,16 @@
+su informix -c "cdr define serv -c east -I g_east"
+su informix -c "cdr define serv -c west -I -S g_east g_west"
+su informix -c "cdr define serv -c south -I -S g_east g_south"
+su informix -c "cdr define grid grid1 -a"
+su informix -c "cdr enable grid -g grid1 -n g_east -n g_west -n g_south -u informix"
+cdr list grid grid1 -v
+su informix -c "cdr check queue  -q cntrlq -w 60 -a"
+su informix -c "cdr check queue  -q sendq -w 60 -a"
+su informix -c "dbaccess - sysdbopen.sql"
+su informix -c "dbaccess stores stores.sql"
+su informix -c "cdr check queue  -q cntrlq -w 60 -a"
+su informix -c "cdr check queue  -q sendq -w 60 -a"
+cdr list grid grid1 -v
+su informix -c "sh -x load.sh"
+su informix -c "cdr check queue  -q sendq -w 60 -a"
+su informix -c "cdr check replset -s grid1 -m g_east -a"
