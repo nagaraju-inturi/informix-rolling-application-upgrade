@@ -5,7 +5,12 @@ This lab is based on docker images.
 
 Download and install docker : https://www.docker.com/get-docker
 
-Run docker_refresh.sh command to build docker images. NOTE: This script removes all existing images on the system. You may not want to comment that out if you have other images on the system that you do not want to delete.
+Copy Informix server tar file to server_ctx/iif.12.10.tar
+
+Copy Informix Client SDS tar file to cm_ctx/clientsdk.4.10.tar
+
+Run docker_refresh.sh command to build docker images for Informix server and connection manager. 
+IMPORTANT NOTE: This script removes all existing DOCKER IMAGES and VOLUMES on the system. You may want to comment out 1) docker rmi -- deletes all images 2) docker volume rm -- deletes all volumnes. 
 
 Run docker_run.sh to start dococker containers.
 
