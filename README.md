@@ -19,3 +19,4 @@ Follow instructions in rolling_schema_upgrade_instructions.pdf to go through the
 
 
 ![alt text](block_diagram.png "Block Diagram for the demo scenario")
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Uyn1DSBDIBo/0.jpg)](https://www.youtube.com/watch?v=Uyn1DSBDIBo)
